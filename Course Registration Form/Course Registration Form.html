@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+	<title> COURSE REGISTRATION FORM </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="Course Registration Form.css">
+	<style> 
+	
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1200px;
+  max-height: 4000px
+  position: relative;
+  margin: auto;
+}
+/* Caption Slideshow */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+	</style>
+
+</head>
+
+<body>
+	
+	<img src="ashesi.jpg"/>
+		
+		<h3> WELCOME TO ASHESI UNIVERSITY </h3>
+
+<div class="slideshow-container">
+</br>
+<div class="mySlides fade">
+	<a href="https://www.ashesi.edu.gh"/>
+         <img alt="Courtyard" src="Ashesi2.jpg"
+         style="width:100%; height: 100%"></a>
+  <div class="text">Ashesi University Library Hallway</div>
+</div>
+
+<div class="mySlides fade">
+  <img src="Ashesi4.jpeg" style="width:100%; height: 20%">
+  <div class="text">Ashesi University Entrance</div>
+</div>
+
+<div class="mySlides fade">
+  <img src="Ashesi5.jpeg" style="width:100%; height: 100%">
+  <div class="text">Ashesi University Courtyard</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+
+
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+
+
+</script>
+<br/><br/>
+	
+	<h4>REGISTERED COURSES LIST</h4>
+		<div class="designTable">
+			<table id="coursebook">
+				<thead>
+					<th>COURSE CODE</th>
+					<th>COURSE NAME</th>	
+					<th>LECTURER</th>
+					<th>EMAIL</th>
+				</thead>
+					<tbody id="course"></tbody>
+						
+				</table>
+		</div>
+
+	<h5>COURSE REGISTRATION SECTION</h5>
+<fieldset><br/>
+
+	<marquee> THIS IS A COURSE REGISTRATION FORM </marquee>
+
+<br/><br/>
+		<form id="courseform">
+
+			<label><b>COURSE CODE</label></b><br/>
+			<input type="text" id="coursecode" size="30px" placeholder="Course Code"/><br/>
+			<br/>
+			<label><b>CODE NAME</label></b><br/>
+			<input type="text" id="coursename" size="30px" placeholder="Course Name"/><br/>
+			<br/>
+			<label><b>LECTURER NAME</label></b><br/>
+			<input type="text" id="lecturername" size="30px" placeholder="Lecturer Name" /><br/>
+			<br/>
+			<label><b>EMAIL</label></b><br/>
+			<input type="email" id="txtemail" size="30px" placeholder="Email" /><br/>
+
+				<br/><select id="selectlist" style="background:grey; color: black;">
+					<option id ="optionId" value="pleaseselect">PLEASE SELECT</option>
+				</select>
+
+
+			<input type="button" style="background:grey; color: black;" onclick='clickDiscard();' value='Discard'/>
+			<input type='button' style="background:grey; color: black;" onclick='clickSave();' value='Save' id='saveButton'/>
+		</form>
+
+
+	<br/><input type="button" style="background:grey; color: black;" onclick="clickDelete()" value="DELETE" id="deleteButton"/>
+	<input type="button" style="background:grey; color: black;" onclick="update()" value="EDIT"  id="updateButton">
+	<span id ="boldStuff"></span>
+
+</fieldset><br/><br/>
+
+
+
+</body>
+<script type="text/javascript" src="Course Registration Form.js"></script>
+
+</html>
